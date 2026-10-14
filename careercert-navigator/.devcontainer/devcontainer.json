@@ -1,0 +1,8 @@
+{
+  "name": "CareerCert Navigator",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "postCreateCommand": "npm install",
+  "postAttachCommand": "JWT_SECRET=codespaces-dev-secret npm start",
+  "forwardPorts": [3000],
+  "portsAttributes": { "3000": { "label": "CareerCert Navigator", "onAutoForward": "openBrowser" } }
+}
