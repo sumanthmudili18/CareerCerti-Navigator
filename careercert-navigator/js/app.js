@@ -243,7 +243,7 @@ const tokenStore = {
 };
 // When the page is served by the Express server, use same-origin. When opened via
 // VS Code Live Server (port 5500) or file://, call the backend on port 3000.
-const API_BASE = location.port === '3000' ? '' : 'http://localhost:3000';
+const API_BASE = (location.protocol === 'file:' || ['5500', '5501', '5502'].includes(location.port)) ? 'http://localhost:3000' : '';
 async function api(path, { method = 'GET', body } = {}) {
   const headers = { 'Content-Type': 'application/json' };
   const t = tokenStore.get();
